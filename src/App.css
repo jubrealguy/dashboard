@@ -24,6 +24,21 @@ body {
   height: 100vh;
 }
 
+.App-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid red;
+}
+
+.App-header img {
+  height: 20rem;
+}
+
+.App-header h1 {
+  font-size: 3.5rem;
+  color: red
+}
+
 main {
   padding: 5rem;
 }
@@ -48,26 +63,11 @@ button {
   padding: .2rem .5rem
 }
 
-.App-header {
-  display: flex;
-  align-items: center;
-  border-bottom: 2px solid rgb(225, 70, 14);
-}
-
-.App-header img {
-  height: 20rem;
-}
-
-.App-header h1 {
-  font-size: 3.5rem;
-  color: rgb(225, 70, 14);
-}
-
 .App-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  border-top: 2px solid rgb(225, 70, 14);
+  border-top: 2px solid red;
   padding-top: 2rem;
 }
 

@@ -5,4 +5,13 @@ const getFullYear = () => {
 }
 
 const getFooterCopy = isIndex => isIndex ? "Holberton School" : "Holberton School main dashboard"
-export {getFullYear, getFooterCopy}
+
+const getLatestNotification = () => {
+    return ("<strong>Urgent requirement</strong> - complete by EOD")
+}
+
+module.exports = {
+    getFullYear,
+    getLatestNotification,
+    getFooterCopy,
+};
