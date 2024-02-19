@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App/App';
-import Notification from './Notifications/Notification';
+//import Notification from './Notifications/Notification';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -10,9 +10,9 @@ root.render(
   </React.StrictMode>
 );
 
-const rootNotifications = ReactDOM.createRoot(document.getElementById('root-notifications'));
-rootNotifications.render(
-  <React.StrictMode>
-    <Notification />
-  </React.StrictMode>
-);
+// const rootNotifications = ReactDOM.createRoot(document.getElementById('root-notifications'));
+// rootNotifications.render(
+//   <React.StrictMode>
+//     <Notification />
+//   </React.StrictMode>
+// );

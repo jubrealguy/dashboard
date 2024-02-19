@@ -1,0 +1,13 @@
+.App-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid red;
+    padding-top: 2rem;
+  }
+  
+  .App-footer p {
+    text-align: center;
+    font-size: 1.6rem;
+    font-style: italic;
+  }
