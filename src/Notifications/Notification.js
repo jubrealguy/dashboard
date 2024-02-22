@@ -3,9 +3,15 @@ import './Notification.css'
 import close from '../assets/close-icon.png'
 import { getLatestNotification } from '../utils/utils'
 import NotificationItem from './NotificationItem'
+import PropTypes from 'prop-types'
 
-const Notification = () => {
+const Notification = ({displayDrawer = true}) => {
     return (
+        <>
+        <div>
+            <p>Your notifications</p>
+        </div>
+        {displayDrawer ?
         <div className='notifications'>
             <div className='notifications-panel'>
                 <p>Here is the list of notifications</p>
@@ -21,8 +27,13 @@ const Notification = () => {
             style={{border: 'none', background: 'none'}}>
                 <img src={close} alt='' style={{width: '1rem'}} />
             </button>
-        </div>
+        </div> : null}
+        </>
     )
+}
+
+Notification.propTypes = {
+    displayDrawer: PropTypes.bool
 }
 
 export default Notification

@@ -4,6 +4,10 @@ import Notification from '../Notifications/Notification'
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
+import CourseList from '../CourseList/CourseList';
+import PropTypes from 'prop-types'
+
+const isLoggedIn = false
 
 function App() {
   return (
@@ -12,7 +16,7 @@ function App() {
       <div className="App">
         <Header />
         <main className='App-body'>
-          <Login />
+          {isLoggedIn ? <CourseList /> : <Login />}
         </main>
         <Footer />
       </div>
