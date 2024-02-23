@@ -1,14 +1,14 @@
 import React from 'react'
 import './Notification.css'
 import close from '../assets/close-icon.png'
-import { getLatestNotification } from '../utils/utils'
 import NotificationItem from './NotificationItem'
 import PropTypes from 'prop-types'
+import NotificationItemShape from './NotificationItemShape'
 
-const Notification = ({displayDrawer = true}) => {
+const Notification = ({displayDrawer = true, listNotifications}) => {
     return (
-        <>
-        <div>
+        <React.Fragment>
+        <div className='menuItem'>
             <p>Your notifications</p>
         </div>
         {displayDrawer ?
@@ -16,9 +16,15 @@ const Notification = ({displayDrawer = true}) => {
             <div className='notifications-panel'>
                 <p>Here is the list of notifications</p>
                 <ul>
-                    <NotificationItem type='default' value='New course available' />
-                    <NotificationItem type='urgent' value='New resume avaialable'/>
-                    <NotificationItem type='urgent' html={getLatestNotification()} />
+                    {
+                        listNotifications && listNotifications.length > 0 ? (
+                            listNotifications.map(({id, html, type, value}) => 
+                                <NotificationItem key={id} type={type} html={html} value={value} />
+                            )
+                        ) : (
+                            <NotificationItem value='No new notification for now' />
+                        )
+                    }
                 </ul>
             </div>
             <button 
@@ -28,12 +34,13 @@ const Notification = ({displayDrawer = true}) => {
                 <img src={close} alt='' style={{width: '1rem'}} />
             </button>
         </div> : null}
-        </>
+        </React.Fragment>
     )
 }
 
 Notification.propTypes = {
-    displayDrawer: PropTypes.bool
+    displayDrawer: PropTypes.bool,
+    listNotifications: PropTypes.arrayOf(NotificationItemShape)
 }
 
 export default Notification

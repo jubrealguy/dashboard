@@ -1,4 +1,6 @@
-const NotificationItem = ({ type, html, value }) => {
+import PropTypes from 'prop-types'
+
+const NotificationItem = ({ type = 'default', html, value }) => {
     return (
         <>
             {type && value ? <li data-notification-type= {type}>{value}</li> : null}
@@ -6,5 +8,13 @@ const NotificationItem = ({ type, html, value }) => {
         </>
     )
 }
+
+NotificationItem.propTypes = {
+    type: PropTypes.string.isRequired,
+    value: PropTypes.string,
+    __html: PropTypes.shape({
+      html: PropTypes.string,
+    }),
+  };
 
 export default NotificationItem
