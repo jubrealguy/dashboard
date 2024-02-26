@@ -7,6 +7,7 @@ import Login from '../Login/Login';
 import CourseList from '../CourseList/CourseList';
 import { getLatestNotification } from '../utils/utils';
 import PropTypes from 'prop-types';
+import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
 
 function App({isLoggedIn = true}) {
   const listCourses = [
@@ -27,7 +28,13 @@ function App({isLoggedIn = true}) {
       <div className="App">
         <Header />
         <main className='App-body'>
-          {isLoggedIn ? <CourseList listCourses={listCourses} /> : <Login />}
+          {isLoggedIn ? (
+          <BodySectionWithMarginBottom title='Course List'>
+            <CourseList listCourses={listCourses} />
+          </BodySectionWithMarginBottom>) : (
+          <BodySectionWithMarginBottom title='Course List'>
+            <Login />
+          </BodySectionWithMarginBottom>)}
         </main>
         <Footer />
       </div>
