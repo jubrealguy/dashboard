@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const CourseListRow = ({ isHeader = false, textFirstCell = null, textSecondCell = null }) => {
+const CourseListRow = ({ isHeader = true, textFirstCell = null, textSecondCell = null }) => {
     if (isHeader) {
         if (textSecondCell === null) {
             return (

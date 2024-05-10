@@ -5,7 +5,6 @@ const BodySection = ({title, children}) => {
         <div className="bodySection">
             <h2>{title}</h2>
             {children}
-            <p title='News from the School'>a paragraph with some random text</p>
         </div>
     )
 }

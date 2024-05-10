@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'
+import './App.css';
 import Notification from '../Notifications/Notification'
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -8,8 +8,9 @@ import CourseList from '../CourseList/CourseList';
 import { getLatestNotification } from '../utils/utils';
 import PropTypes from 'prop-types';
 import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
+import News from '../News/News';
 
-function App({isLoggedIn = true}) {
+function App({isLoggedIn = false}) {
   const listCourses = [
     { id: 1, name: 'ES6', credit: 60 },
     { id: 2, name: 'Webpack', credit: 20 },
@@ -35,6 +36,9 @@ function App({isLoggedIn = true}) {
           <BodySectionWithMarginBottom title='Course List'>
             <Login />
           </BodySectionWithMarginBottom>)}
+          <BodySectionWithMarginBottom  title='News from the School'>
+            <News />
+          </BodySectionWithMarginBottom>
         </main>
         <Footer />
       </div>

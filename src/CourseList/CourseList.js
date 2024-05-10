@@ -7,14 +7,14 @@ const CourseList = ({listCourses}) => {
     return (
         <table id='Courselist'>
             <thead>
-                <CourseListRow isHeader={true} textFirstCell='Available courses' textSecondCell={null} />
-                <CourseListRow isHeader={true} textFirstCell='Course name' textSecondCell='Credit' />
+                <CourseListRow textFirstCell='Available courses' textSecondCell={null} />
+                <CourseListRow textFirstCell='Course name' textSecondCell='Credit' />
             </thead>
             <tbody>
                 {
                     listCourses.length > 0 ? (
                         listCourses.map(({id, name, credit}) => 
-                        <CourseListRow key={id} textFirstCell={name} textSecondCell={credit} />)
+                        <CourseListRow key={id} isHeader={false} textFirstCell={name} textSecondCell={credit} />)
                     ): (
                         <CourseListRow textFirstCell="No course available yet" />
                     )
